@@ -56,7 +56,7 @@ class DefaultDataset(Dataset):
         self.test_cfg = test_cfg if test_mode else None
 
         if test_mode:
-            self.test_voxelize = TRANSFORMS.build(self.test_cfg.voxelize)
+            self.test_voxelize = TRANSFORMS.build(self.test_cfg.voxelize) if self.test_cfg.voxelize else None
             self.test_crop = (
                 TRANSFORMS.build(self.test_cfg.crop) if self.test_cfg.crop else None
             )
