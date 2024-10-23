@@ -705,7 +705,7 @@ class PointTransformerV3(PointModule):
         point = self.enc(point)
         if not self.cls_mode:
             point = self.dec(point)
-        torch.save(point.feat, "./data/{}/feat.pt".format(point.ase_id))
+        torch.save(point.feat, f"./data/{point.ase_id}/feat.pt")
         # else:
         #     point.feat = torch_scatter.segment_csr(
         #         src=point.feat,
